@@ -12,6 +12,9 @@ namespace Livraria.Domain.Commands.Inputs
         {
             try
             {
+                
+                if (string.IsNullOrWhiteSpace(Id.ToString()))
+                    AddNotification("Id", "ID é um campo obrigatório");
                 if(Id < 0)
                     AddNotification("Id", "Id deve ser maior que zero");
 
